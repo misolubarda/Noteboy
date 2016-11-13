@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9AC50B751DD8AABE000BCBE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B741DD8AABE000BCBE0 /* AppDelegate.swift */; };
-		9AC50B771DD8AABE000BCBE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B761DD8AABE000BCBE0 /* ViewController.swift */; };
-		9AC50B7A1DD8AABE000BCBE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50B781DD8AABE000BCBE0 /* Main.storyboard */; };
-		9AC50B7C1DD8AABE000BCBE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50B7B1DD8AABE000BCBE0 /* Assets.xcassets */; };
-		9AC50B7F1DD8AABE000BCBE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50B7D1DD8AABE000BCBE0 /* LaunchScreen.storyboard */; };
+		9A07195D1DD8B8090015FB8C /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07195C1DD8B8090015FB8C /* NoteListViewController.swift */; };
+		9A07195F1DD8B8430015FB8C /* NoteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07195E1DD8B8430015FB8C /* NoteList.storyboard */; };
+		9A0719621DD8BA960015FB8C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0719611DD8BA960015FB8C /* BaseViewController.swift */; };
 		9AC50B8A1DD8AABE000BCBE0 /* NoteboyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B891DD8AABE000BCBE0 /* NoteboyTests.swift */; };
 		9AC50B951DD8AABE000BCBE0 /* NoteboyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B941DD8AABE000BCBE0 /* NoteboyUITests.swift */; };
+		9AC50BB31DD8B0CC000BCBE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BAA1DD8B0CC000BCBE0 /* Assets.xcassets */; };
+		9AC50BB41DD8B0CC000BCBE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50BAC1DD8B0CC000BCBE0 /* AppDelegate.swift */; };
+		9AC50BB51DD8B0CC000BCBE0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BAD1DD8B0CC000BCBE0 /* Info.plist */; };
+		9AC50BB61DD8B0CC000BCBE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BB11DD8B0CC000BCBE0 /* LaunchScreen.storyboard */; };
+		9AC50BBA1DD8B15C000BCBE0 /* AssetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50BB91DD8B15C000BCBE0 /* AssetHelper.swift */; };
+		9AC50BBD1DD8B24C000BCBE0 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50BBC1DD8B24C000BCBE0 /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +38,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A07195C1DD8B8090015FB8C /* NoteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		9A07195E1DD8B8430015FB8C /* NoteList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteList.storyboard; sourceTree = "<group>"; };
+		9A0719611DD8BA960015FB8C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9AC50B711DD8AABE000BCBE0 /* Noteboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noteboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AC50B741DD8AABE000BCBE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AC50B761DD8AABE000BCBE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9AC50B791DD8AABE000BCBE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9AC50B7B1DD8AABE000BCBE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9AC50B7E1DD8AABE000BCBE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9AC50B801DD8AABE000BCBE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AC50B851DD8AABE000BCBE0 /* NoteboyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteboyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC50B891DD8AABE000BCBE0 /* NoteboyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteboyTests.swift; sourceTree = "<group>"; };
 		9AC50B8B1DD8AABE000BCBE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AC50B901DD8AABE000BCBE0 /* NoteboyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteboyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC50B941DD8AABE000BCBE0 /* NoteboyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteboyUITests.swift; sourceTree = "<group>"; };
 		9AC50B961DD8AABE000BCBE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC50BAA1DD8B0CC000BCBE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AC50BAC1DD8B0CC000BCBE0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9AC50BAD1DD8B0CC000BCBE0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC50BB11DD8B0CC000BCBE0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AC50BB91DD8B15C000BCBE0 /* AssetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHelper.swift; sourceTree = "<group>"; };
+		9AC50BBC1DD8B24C000BCBE0 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0719601DD8BA7D0015FB8C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9A0719611DD8BA960015FB8C /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		9AC50B681DD8AABE000BCBE0 = {
 			isa = PBXGroup;
 			children = (
-				9AC50B731DD8AABE000BCBE0 /* Noteboy */,
+				9AC50BA81DD8B0CC000BCBE0 /* Noteboy */,
 				9AC50B881DD8AABE000BCBE0 /* NoteboyTests */,
 				9AC50B931DD8AABE000BCBE0 /* NoteboyUITests */,
 				9AC50B721DD8AABE000BCBE0 /* Products */,
@@ -92,19 +107,6 @@
 				9AC50B901DD8AABE000BCBE0 /* NoteboyUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9AC50B731DD8AABE000BCBE0 /* Noteboy */ = {
-			isa = PBXGroup;
-			children = (
-				9AC50B741DD8AABE000BCBE0 /* AppDelegate.swift */,
-				9AC50B761DD8AABE000BCBE0 /* ViewController.swift */,
-				9AC50B781DD8AABE000BCBE0 /* Main.storyboard */,
-				9AC50B7B1DD8AABE000BCBE0 /* Assets.xcassets */,
-				9AC50B7D1DD8AABE000BCBE0 /* LaunchScreen.storyboard */,
-				9AC50B801DD8AABE000BCBE0 /* Info.plist */,
-			);
-			path = Noteboy;
 			sourceTree = "<group>";
 		};
 		9AC50B881DD8AABE000BCBE0 /* NoteboyTests */ = {
@@ -123,6 +125,86 @@
 				9AC50B961DD8AABE000BCBE0 /* Info.plist */,
 			);
 			path = NoteboyUITests;
+			sourceTree = "<group>";
+		};
+		9AC50BA81DD8B0CC000BCBE0 /* Noteboy */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BA91DD8B0CC000BCBE0 /* Assets */,
+				9AC50BAB1DD8B0CC000BCBE0 /* Entry point */,
+				9AC50BAE1DD8B0CC000BCBE0 /* Model */,
+				9AC50BAF1DD8B0CC000BCBE0 /* UI */,
+			);
+			path = Noteboy;
+			sourceTree = "<group>";
+		};
+		9AC50BA91DD8B0CC000BCBE0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BAA1DD8B0CC000BCBE0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9AC50BAB1DD8B0CC000BCBE0 /* Entry point */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BAC1DD8B0CC000BCBE0 /* AppDelegate.swift */,
+				9AC50BAD1DD8B0CC000BCBE0 /* Info.plist */,
+			);
+			path = "Entry point";
+			sourceTree = "<group>";
+		};
+		9AC50BAE1DD8B0CC000BCBE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BBB1DD8B227000BCBE0 /* Library */,
+				9AC50BB81DD8B133000BCBE0 /* Utilities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AC50BAF1DD8B0CC000BCBE0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9A0719601DD8BA7D0015FB8C /* Common */,
+				9AC50BBE1DD8B6BC000BCBE0 /* NoteList */,
+				9AC50BB01DD8B0CC000BCBE0 /* Launch screen */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9AC50BB01DD8B0CC000BCBE0 /* Launch screen */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BB11DD8B0CC000BCBE0 /* LaunchScreen.storyboard */,
+			);
+			path = "Launch screen";
+			sourceTree = "<group>";
+		};
+		9AC50BB81DD8B133000BCBE0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BB91DD8B15C000BCBE0 /* AssetHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9AC50BBB1DD8B227000BCBE0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				9AC50BBC1DD8B24C000BCBE0 /* UIColorExtensions.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		9AC50BBE1DD8B6BC000BCBE0 /* NoteList */ = {
+			isa = PBXGroup;
+			children = (
+				9A07195C1DD8B8090015FB8C /* NoteListViewController.swift */,
+				9A07195E1DD8B8430015FB8C /* NoteList.storyboard */,
+			);
+			path = NoteList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +314,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AC50B7F1DD8AABE000BCBE0 /* LaunchScreen.storyboard in Resources */,
-				9AC50B7C1DD8AABE000BCBE0 /* Assets.xcassets in Resources */,
-				9AC50B7A1DD8AABE000BCBE0 /* Main.storyboard in Resources */,
+				9A07195F1DD8B8430015FB8C /* NoteList.storyboard in Resources */,
+				9AC50BB61DD8B0CC000BCBE0 /* LaunchScreen.storyboard in Resources */,
+				9AC50BB51DD8B0CC000BCBE0 /* Info.plist in Resources */,
+				9AC50BB31DD8B0CC000BCBE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AC50B771DD8AABE000BCBE0 /* ViewController.swift in Sources */,
-				9AC50B751DD8AABE000BCBE0 /* AppDelegate.swift in Sources */,
+				9A0719621DD8BA960015FB8C /* BaseViewController.swift in Sources */,
+				9A07195D1DD8B8090015FB8C /* NoteListViewController.swift in Sources */,
+				9AC50BBD1DD8B24C000BCBE0 /* UIColorExtensions.swift in Sources */,
+				9AC50BBA1DD8B15C000BCBE0 /* AssetHelper.swift in Sources */,
+				9AC50BB41DD8B0CC000BCBE0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +380,6 @@
 			targetProxy = 9AC50B911DD8AABE000BCBE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9AC50B781DD8AABE000BCBE0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9AC50B791DD8AABE000BCBE0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9AC50B7D1DD8AABE000BCBE0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9AC50B7E1DD8AABE000BCBE0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9AC50B971DD8AABE000BCBE0 /* Debug */ = {
@@ -410,7 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Noteboy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Noteboy/Entry point/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = misolubarda.Noteboy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,7 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Noteboy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Noteboy/Entry point/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = misolubarda.Noteboy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +570,7 @@
 				9AC50B9B1DD8AABE000BCBE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AC50B9C1DD8AABE000BCBE0 /* Build configuration list for PBXNativeTarget "NoteboyTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +579,7 @@
 				9AC50B9E1DD8AABE000BCBE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AC50B9F1DD8AABE000BCBE0 /* Build configuration list for PBXNativeTarget "NoteboyUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +588,7 @@
 				9AC50BA11DD8AABE000BCBE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
