@@ -1,31 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mV0-mO-6He">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Note List View Controller-->
-        <scene sceneID="yXr-Ze-f0s">
+        <!--Noteboy-->
+        <scene sceneID="cbC-Yj-dty">
             <objects>
-                <viewController id="Krl-Fg-E5D" customClass="NoteListViewController" customModule="Noteboy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HEN-3b-LWg" customClass="NoteListViewController" customModule="Noteboy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3B-wy-oOG"/>
-                        <viewControllerLayoutGuide type="bottom" id="cMO-bZ-pH9"/>
+                        <viewControllerLayoutGuide type="top" id="36K-rs-pZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="frY-UD-6CJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r5e-3d-3nJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="FVf-Lb-JqL">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wHT-kk-mCk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="frY-UD-6CJ" firstAttribute="top" secondItem="wHT-kk-mCk" secondAttribute="bottom" id="H90-Q7-xSW"/>
+                            <constraint firstItem="wHT-kk-mCk" firstAttribute="leading" secondItem="FVf-Lb-JqL" secondAttribute="leading" id="gkT-xR-W07"/>
+                            <constraint firstAttribute="trailing" secondItem="wHT-kk-mCk" secondAttribute="trailing" id="gs2-5R-Qfd"/>
+                            <constraint firstItem="wHT-kk-mCk" firstAttribute="top" secondItem="36K-rs-pZc" secondAttribute="bottom" id="i4E-rI-R5f"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Noteboy" id="kRu-kj-0hY">
+                        <barButtonItem key="leftBarButtonItem" image="NoteboyIcon" id="Esu-OX-MAh">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="leftBarItemTapped:" destination="HEN-3b-LWg" id="Iqw-yd-g5m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="okG-fj-Rq6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="rightBarItemTapped:" destination="HEN-3b-LWg" id="BBr-Tm-5EV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="wHT-kk-mCk" id="UkG-R7-QjY"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hfc-Oa-QCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PqD-Le-3kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-206" y="-96"/>
+            <point key="canvasLocation" x="732" y="-96.7016491754123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fNE-4o-WLX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mV0-mO-6He" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="D3m-47-cqF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.30980393290000002" green="0.015686275440000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HEN-3b-LWg" kind="relationship" relationship="rootViewController" id="Umo-xF-M61"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0i-sv-flB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207.19999999999999" y="-96.7016491754123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NoteboyIcon" width="22" height="22"/>
+    </resources>
 </document>

@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A07195D1DD8B8090015FB8C /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07195C1DD8B8090015FB8C /* NoteListViewController.swift */; };
-		9A07195F1DD8B8430015FB8C /* NoteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07195E1DD8B8430015FB8C /* NoteList.storyboard */; };
 		9A0719621DD8BA960015FB8C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0719611DD8BA960015FB8C /* BaseViewController.swift */; };
+		9A0719631DD9A6280015FB8C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BAD1DD8B0CC000BCBE0 /* Info.plist */; };
+		9A19B20D1DDA471500AAA91D /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B20C1DDA471500AAA91D /* AppNavigationController.swift */; };
+		9A19B2101DDA60D600AAA91D /* NoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B20F1DDA60D600AAA91D /* NoteListCell.swift */; };
+		9A19B2121DDA613E00AAA91D /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A19B2111DDA613E00AAA91D /* NoteListCell.xib */; };
+		9AB69A2F1DDA40280032031C /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69A2E1DDA40280032031C /* NoteListViewController.swift */; };
+		9AB69A311DDA40500032031C /* NoteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB69A301DDA40500032031C /* NoteList.storyboard */; };
 		9AC50B8A1DD8AABE000BCBE0 /* NoteboyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B891DD8AABE000BCBE0 /* NoteboyTests.swift */; };
 		9AC50B951DD8AABE000BCBE0 /* NoteboyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B941DD8AABE000BCBE0 /* NoteboyUITests.swift */; };
 		9AC50BB31DD8B0CC000BCBE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BAA1DD8B0CC000BCBE0 /* Assets.xcassets */; };
 		9AC50BB41DD8B0CC000BCBE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50BAC1DD8B0CC000BCBE0 /* AppDelegate.swift */; };
-		9AC50BB51DD8B0CC000BCBE0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BAD1DD8B0CC000BCBE0 /* Info.plist */; };
 		9AC50BB61DD8B0CC000BCBE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC50BB11DD8B0CC000BCBE0 /* LaunchScreen.storyboard */; };
 		9AC50BBA1DD8B15C000BCBE0 /* AssetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50BB91DD8B15C000BCBE0 /* AssetHelper.swift */; };
 		9AC50BBD1DD8B24C000BCBE0 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50BBC1DD8B24C000BCBE0 /* UIColorExtensions.swift */; };
@@ -38,9 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A07195C1DD8B8090015FB8C /* NoteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
-		9A07195E1DD8B8430015FB8C /* NoteList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteList.storyboard; sourceTree = "<group>"; };
 		9A0719611DD8BA960015FB8C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9A19B20C1DDA471500AAA91D /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		9A19B20F1DDA60D600AAA91D /* NoteListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListCell.swift; sourceTree = "<group>"; };
+		9A19B2111DDA613E00AAA91D /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
+		9AB69A2E1DDA40280032031C /* NoteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		9AB69A301DDA40500032031C /* NoteList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteList.storyboard; sourceTree = "<group>"; };
 		9AC50B711DD8AABE000BCBE0 /* Noteboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noteboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC50B851DD8AABE000BCBE0 /* NoteboyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteboyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC50B891DD8AABE000BCBE0 /* NoteboyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteboyTests.swift; sourceTree = "<group>"; };
@@ -87,6 +93,23 @@
 				9A0719611DD8BA960015FB8C /* BaseViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		9A19B20B1DDA46F100AAA91D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B20C1DDA471500AAA91D /* AppNavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		9A19B20E1DDA4CEB00AAA91D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B20F1DDA60D600AAA91D /* NoteListCell.swift */,
+				9A19B2111DDA613E00AAA91D /* NoteListCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9AC50B681DD8AABE000BCBE0 = {
@@ -167,6 +190,7 @@
 		9AC50BAF1DD8B0CC000BCBE0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9A19B20B1DDA46F100AAA91D /* Navigation */,
 				9A0719601DD8BA7D0015FB8C /* Common */,
 				9AC50BBE1DD8B6BC000BCBE0 /* NoteList */,
 				9AC50BB01DD8B0CC000BCBE0 /* Launch screen */,
@@ -201,8 +225,9 @@
 		9AC50BBE1DD8B6BC000BCBE0 /* NoteList */ = {
 			isa = PBXGroup;
 			children = (
-				9A07195C1DD8B8090015FB8C /* NoteListViewController.swift */,
-				9A07195E1DD8B8430015FB8C /* NoteList.storyboard */,
+				9A19B20E1DDA4CEB00AAA91D /* Cells */,
+				9AB69A2E1DDA40280032031C /* NoteListViewController.swift */,
+				9AB69A301DDA40500032031C /* NoteList.storyboard */,
 			);
 			path = NoteList;
 			sourceTree = "<group>";
@@ -314,9 +339,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A07195F1DD8B8430015FB8C /* NoteList.storyboard in Resources */,
+				9AB69A311DDA40500032031C /* NoteList.storyboard in Resources */,
+				9A0719631DD9A6280015FB8C /* Info.plist in Resources */,
 				9AC50BB61DD8B0CC000BCBE0 /* LaunchScreen.storyboard in Resources */,
-				9AC50BB51DD8B0CC000BCBE0 /* Info.plist in Resources */,
+				9A19B2121DDA613E00AAA91D /* NoteListCell.xib in Resources */,
 				9AC50BB31DD8B0CC000BCBE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,9 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0719621DD8BA960015FB8C /* BaseViewController.swift in Sources */,
-				9A07195D1DD8B8090015FB8C /* NoteListViewController.swift in Sources */,
 				9AC50BBD1DD8B24C000BCBE0 /* UIColorExtensions.swift in Sources */,
 				9AC50BBA1DD8B15C000BCBE0 /* AssetHelper.swift in Sources */,
+				9A19B20D1DDA471500AAA91D /* AppNavigationController.swift in Sources */,
+				9A19B2101DDA60D600AAA91D /* NoteListCell.swift in Sources */,
+				9AB69A2F1DDA40280032031C /* NoteListViewController.swift in Sources */,
 				9AC50BB41DD8B0CC000BCBE0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Noteboy/Entry point/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = misolubarda.Noteboy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Noteboy/Entry point/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = misolubarda.Noteboy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
