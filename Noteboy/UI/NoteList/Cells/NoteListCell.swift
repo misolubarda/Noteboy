@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 protocol NoteListCellDelegate: class {
     func noteListCell(_ cell: NoteListCell, didEndEditingWithText: String)
@@ -14,11 +15,33 @@ protocol NoteListCellDelegate: class {
 
 class NoteListCell: UITableViewCell {
 
+    private let backgroundHeightCompact: CGFloat = 50.0
+    private let backgroundHeightExpanded: CGFloat = 200.0
+
     @IBOutlet private weak var textBackgroundView: UIView!
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private var backgroundHeight: NSLayoutConstraint!
     weak var delegate: NoteListCellDelegate?
+    var isEditingEnabled: Bool = false {
+        didSet {
+            if oldValue == isEditingEnabled {
+                return
+            }
+            textView.isScrollEnabled = isEditingEnabled
+            if isEditingEnabled {
+                textView.becomeFirstResponder()
+            } else {
+                textView.resignFirstResponder()
+            }
+        }
+    }
+    var isCellExpanded: Bool = false {
+        didSet {
+            self.backgroundHeight.constant = self.isCellExpanded ? self.backgroundHeightExpanded : self.backgroundHeightCompact
+        }
+    }
 
+    //MARK: - View lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -40,23 +63,18 @@ class NoteListCell: UITableViewCell {
         textView.text = text
     }
 
-    func isEditingEnabled(_ enabled: Bool) {
-        textView.isScrollEnabled = enabled
-        if enabled {
-            textView.becomeFirstResponder()
-        } else {
-            textView.resignFirstResponder()
-        }
+    /*
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        isCellExpanded = isSelected
     }
-
+    */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
             textBackgroundView.backgroundColor = AssetHelper.colorNoteBackgroundSelected
-            backgroundHeight.isActive = false
         } else {
             textBackgroundView.backgroundColor = AssetHelper.colorNoteBackgroundNormal
-            backgroundHeight.isActive = true
         }
     }
 }

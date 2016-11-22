@@ -61,7 +61,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mV0-mO-6He" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="D3m-47-cqF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="D3m-47-cqF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.30980393290000002" green="0.015686275440000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
