@@ -15,11 +15,15 @@ struct AssetHelper {
     }()
 
     static let colorNoteBackgroundNormal = {
-        UIColor(hex: 0x4595C8).withAlphaComponent(0.67)
+        UIColor(hex: 0x2E6486)
     }()
 
     static let colorNoteBackgroundSelected = {
         UIColor(hex: 0x4595C8)
+    }()
+
+    static let colorNoteHeader = {
+        UIColor(hex: 0x63A6D1)
     }()
 
     static let colorHeaderDelimiter = {

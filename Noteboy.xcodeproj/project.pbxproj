@@ -12,6 +12,7 @@
 		9A19B20D1DDA471500AAA91D /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B20C1DDA471500AAA91D /* AppNavigationController.swift */; };
 		9A19B2101DDA60D600AAA91D /* NoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B20F1DDA60D600AAA91D /* NoteListCell.swift */; };
 		9A19B2121DDA613E00AAA91D /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A19B2111DDA613E00AAA91D /* NoteListCell.xib */; };
+		9A9025BA1DEAF9CB00A456BD /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9025B91DEAF9CB00A456BD /* Note.swift */; };
 		9AB69A2F1DDA40280032031C /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69A2E1DDA40280032031C /* NoteListViewController.swift */; };
 		9AB69A311DDA40500032031C /* NoteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB69A301DDA40500032031C /* NoteList.storyboard */; };
 		9AC50B8A1DD8AABE000BCBE0 /* NoteboyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC50B891DD8AABE000BCBE0 /* NoteboyTests.swift */; };
@@ -45,6 +46,7 @@
 		9A19B20C1DDA471500AAA91D /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		9A19B20F1DDA60D600AAA91D /* NoteListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListCell.swift; sourceTree = "<group>"; };
 		9A19B2111DDA613E00AAA91D /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
+		9A9025B91DEAF9CB00A456BD /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9AB69A2E1DDA40280032031C /* NoteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		9AB69A301DDA40500032031C /* NoteList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoteList.storyboard; sourceTree = "<group>"; };
 		9AC50B711DD8AABE000BCBE0 /* Noteboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noteboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 			children = (
 				9AC50BBB1DD8B227000BCBE0 /* Library */,
 				9AC50BB81DD8B133000BCBE0 /* Utilities */,
+				9A9025B91DEAF9CB00A456BD /* Note.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				9A0719621DD8BA960015FB8C /* BaseViewController.swift in Sources */,
 				9AC50BBD1DD8B24C000BCBE0 /* UIColorExtensions.swift in Sources */,
 				9AC50BBA1DD8B15C000BCBE0 /* AssetHelper.swift in Sources */,
+				9A9025BA1DEAF9CB00A456BD /* Note.swift in Sources */,
 				9A19B20D1DDA471500AAA91D /* AppNavigationController.swift in Sources */,
 				9A19B2101DDA60D600AAA91D /* NoteListCell.swift in Sources */,
 				9AB69A2F1DDA40280032031C /* NoteListViewController.swift in Sources */,

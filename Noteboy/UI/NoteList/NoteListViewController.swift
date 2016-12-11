@@ -11,11 +11,14 @@ import UserNotifications
 
 class NoteListViewController: BaseViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    fileprivate static let cellHeightNormal = CGFloat(100.0)
+    fileprivate static let cellHeightExpanded = CGFloat(200.0)
+
+    @IBOutlet weak var defaultCollectionView: UICollectionView!
+    var notes = [Note]()
+
     @IBAction func leftBarItemTapped(_ sender: UIBarButtonItem) {
     }
-
     @IBAction func rightBarItemTapped(_ sender: UIBarButtonItem) {
     }
 
@@ -39,6 +42,18 @@ class NoteListViewController: BaseViewController {
     }
 
     private func setupUI() {
+        for _ in 1...10 {
+            var note = Note()
+            note.text = "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
+            notes.append(note)
+        }
+
+        var note = notes[3]
+        note.text += note.text
+        note.text += note.text
+        note.text += note.text
+        note.text += note.text
+        note.text += note.text
         setupNavigationBar(navigationBar: self.navigationController?.navigationBar)
         setupTable()
         /*
@@ -81,69 +96,86 @@ class NoteListViewController: BaseViewController {
     }
 
     private func setupTable() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "NoteListCell", bundle: nil), forCellReuseIdentifier: NSStringFromClass(NoteListCell.self))
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
-        tableView.contentInset = .init(top: 10, left: 0, bottom: 10, right: 0)
+        defaultCollectionView.dataSource = self
+        defaultCollectionView.delegate = self
+        defaultCollectionView.register(UINib(nibName: "NoteListCell", bundle: nil), forCellWithReuseIdentifier: NSStringFromClass(NoteListCell.self))
+        defaultCollectionView.contentInset = .init(top: 15, left: 0, bottom: 15, right: 0)
     }
+
 
     func cell(cell: NoteListCell, enableEditing editing: Bool) {
         cell.isEditingEnabled = editing
-        tableView.isScrollEnabled = !editing
-        let currentOffset = tableView.contentOffset
+        defaultCollectionView.isScrollEnabled = !editing
+        let currentOffset = defaultCollectionView.contentOffset
         UIView.animate(withDuration: 0.3, animations: {
             self.navigationController?.setNavigationBarHidden(editing, animated: false)
-            self.tableView.contentOffset = currentOffset
+            self.defaultCollectionView.contentOffset = currentOffset
         })
-        tableView.setContentOffset(CGPoint(x: 0, y: cell.frame.origin.y), animated: true)
+        defaultCollectionView.setContentOffset(CGPoint(x: 0, y: cell.frame.origin.y), animated: true)
     }
+
 }
 
-extension NoteListViewController: UITableViewDataSource, UITableViewDelegate {
+extension NoteListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(NoteListCell.self), for: indexPath) as! NoteListCell
-        var cellText = "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-        if indexPath.row == 3 {
-            cellText += "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-            cellText += "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-            cellText += "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-            cellText += "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-            cellText += "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-            cellText += "A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel. A friend is someone who gives you total freedom to be yourself - and especially to feel, or not feel."
-        }
-        cell.configure(withTextDelegate: self, text: cellText)
-        //cell.isCellExpanded = cell.isSelected
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let note = notes[indexPath.row]
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(NoteListCell.self), for: indexPath) as! NoteListCell
+        cell.configure(withTextDelegate: self, dataSource: self, text: note.text)
         return cell
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 13
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return notes.count
     }
 
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if let selectedIndexPath = tableView.indexPathForSelectedRow, let selectedCell = tableView.cellForRow(at: selectedIndexPath) as? NoteListCell {
-            if selectedIndexPath == indexPath {
-                self.cell(cell: selectedCell, enableEditing: true)
-            } else if selectedCell.isEditingEnabled {
-                self.cell(cell: selectedCell, enableEditing: false)
-                return selectedIndexPath
-            } else {
-                selectedCell.isCellExpanded = false
-                let cellBeingSelected = tableView.cellForRow(at: indexPath) as! NoteListCell
-                cellBeingSelected.isCellExpanded = true
-                tableView.beginUpdates()
-                tableView.endUpdates()
-            }
-        } else {
-            let cellBeingSelected = tableView.cellForRow(at: indexPath) as! NoteListCell
-            cellBeingSelected.isCellExpanded = true
-            tableView.beginUpdates()
-            tableView.endUpdates()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if let selectedIndexPaths = collectionView.indexPathsForSelectedItems, selectedIndexPaths.contains(indexPath) {
+            let cell = collectionView.cellForItem(at: indexPath) as! NoteListCell
+            cell.isEditingEnabled = true
+            return false
         }
-        return indexPath
+        return true
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.collectionView(collectionView, makeCellExpanded: true, indexPath: indexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        self.collectionView(collectionView, makeCellExpanded: false, indexPath: indexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if let selectedIndexPaths = collectionView.indexPathsForSelectedItems, selectedIndexPaths.contains(indexPath) {
+            let cell = collectionView.cellForItem(at: indexPath) as! NoteListCell
+            if cell.isEditingEnabled {
+                return CGSize(width: collectionView.frame.width, height: 300)
+            } else {
+                return CGSize(width: collectionView.frame.width, height: type(of: self).cellHeightExpanded)
+            }
+        }
+        return CGSize(width: collectionView.frame.width, height: type(of: self).cellHeightNormal)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, makeCellExpanded expanded:Bool, indexPath: IndexPath) {
+        collectionView.performBatchUpdates({
+            guard let cell = collectionView.cellForItem(at: indexPath) else {
+                return
+            }
+            UIView.transition(with: cell, duration: 0.3, options: .curveEaseInOut, animations: {
+                var frame = cell.frame
+                let height = expanded ? type(of: self).cellHeightExpanded : type(of: self).cellHeightNormal
+                frame.size = CGSize(width: collectionView.frame.width, height: height)
+                cell.frame = frame
+                cell.layoutIfNeeded()
+            }, completion: nil)
+        }, completion: nil)
     }
 }
 
@@ -152,17 +184,23 @@ extension NoteListViewController: NoteListCellDelegate {
     }
 }
 
+extension NoteListViewController: NoteListCellDataSource {
+    func widthForCell(cell: NoteListCell) -> CGFloat {
+        return self.defaultCollectionView.contentSize.width - 20
+    }
+}
+
 //MARK: Keyboard notifications
 extension NoteListViewController {
     func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            tableView.contentInset.bottom += keyboardSize.height
+            defaultCollectionView.contentInset.bottom += keyboardSize.height
         }
     }
 
     func keyboardWillHide(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            tableView.contentInset.bottom -= keyboardSize.height
+            defaultCollectionView.contentInset.bottom -= keyboardSize.height
         }
     }
 }
