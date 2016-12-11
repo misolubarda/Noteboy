@@ -138,6 +138,8 @@ extension NoteListViewController: UICollectionViewDataSource, UICollectionViewDe
         if let selectedIndexPaths = collectionView.indexPathsForSelectedItems, selectedIndexPaths.contains(indexPath) {
             let cell = collectionView.cellForItem(at: indexPath) as! NoteListCell
             cell.isEditingEnabled = true
+            //.scrollToNearestSelectedRow(at: .none, animated: true)
+            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
             return false
         }
         return true
@@ -168,18 +170,30 @@ extension NoteListViewController: UICollectionViewDataSource, UICollectionViewDe
             guard let cell = collectionView.cellForItem(at: indexPath) else {
                 return
             }
-            UIView.transition(with: cell, duration: 0.3, options: .curveEaseInOut, animations: {
-                var frame = cell.frame
-                let height = expanded ? type(of: self).cellHeightExpanded : type(of: self).cellHeightNormal
-                frame.size = CGSize(width: collectionView.frame.width, height: height)
-                cell.frame = frame
-                cell.layoutIfNeeded()
-            }, completion: nil)
+            self.makeCell(cell, expanded: expanded)
+        }, completion: nil)
+    }
+
+    func makeCell(_ cell: UICollectionViewCell, expanded: Bool) {
+        UIView.transition(with: cell, duration: 0.3, options: .curveEaseInOut, animations: {
+            var frame = cell.frame
+            let height = expanded ? type(of: self).cellHeightExpanded : type(of: self).cellHeightNormal
+            frame.size = CGSize(width: frame.width, height: height)
+            cell.frame = frame
+            cell.layoutIfNeeded()
         }, completion: nil)
     }
 }
 
 extension NoteListViewController: NoteListCellDelegate {
+
+    func noteListCelldidTapOnSave(_ cell: NoteListCell) {
+        defaultCollectionView.performBatchUpdates({
+            cell.isEditingEnabled = false
+            self.makeCell(cell, expanded: true)
+        }, completion: nil)
+    }
+
     func noteListCell(_ cell: NoteListCell, didEndEditingWithText: String) {
     }
 }
@@ -194,7 +208,21 @@ extension NoteListViewController: NoteListCellDataSource {
 extension NoteListViewController {
     func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            defaultCollectionView.contentInset.bottom += keyboardSize.height
+            defaultCollectionView.performBatchUpdates({
+                guard let selectedIndexPath = self.defaultCollectionView.indexPathsForSelectedItems?.first, let cell = self.defaultCollectionView.cellForItem(at: selectedIndexPath) else {
+                    return
+                }
+                self.defaultCollectionView.contentInset.bottom += keyboardSize.height
+
+                UIView.transition(with: cell, duration: 0.3, options: .curveEaseInOut, animations: {
+                    var frame = cell.frame
+                    let height = self.defaultCollectionView.frame.height - keyboardSize.height
+                    frame.size = CGSize(width: frame.width, height: height)
+                    cell.frame = frame
+                    cell.layoutIfNeeded()
+                }, completion: nil)
+            }, completion: nil)
+
         }
     }
 

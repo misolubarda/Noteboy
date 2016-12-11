@@ -10,10 +10,10 @@ import UIKit
 import UserNotifications
 
 protocol NoteListCellDataSource: class {
-    func widthForCell(cell: NoteListCell) -> CGFloat
 }
 
 protocol NoteListCellDelegate: class {
+    func noteListCelldidTapOnSave(_ cell: NoteListCell)
     func noteListCell(_ cell: NoteListCell, didEndEditingWithText: String)
 }
 
@@ -36,8 +36,10 @@ class NoteListCell: UICollectionViewCell {
             }
             textView.isScrollEnabled = isEditingEnabled
             if isEditingEnabled {
+                editButton.setTitle("Save changes", for: .normal)
                 textView.becomeFirstResponder()
             } else {
+                editButton.setTitle("Edit", for: .normal)
                 textView.resignFirstResponder()
             }
         }
@@ -46,6 +48,13 @@ class NoteListCell: UICollectionViewCell {
     @IBAction func deleteButtonAction(_ sender: UIButton) {
     }
 
+    @IBAction func editButtonAction(_ sender: UIButton) {
+        if isEditingEnabled {
+            self.delegate?.noteListCelldidTapOnSave(self)
+        } else {
+
+        }
+    }
 
     //MARK: - View lifecycle
     override func awakeFromNib() {

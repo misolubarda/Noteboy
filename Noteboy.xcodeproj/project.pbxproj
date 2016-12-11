@@ -303,6 +303,7 @@
 				TargetAttributes = {
 					9AC50B701DD8AABE000BCBE0 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GF94NY638N;
 						ProvisioningStyle = Automatic;
 					};
 					9AC50B841DD8AABE000BCBE0 = {
@@ -509,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GF94NY638N;
 				INFOPLIST_FILE = "$(SRCROOT)/Noteboy/Entry point/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -522,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GF94NY638N;
 				INFOPLIST_FILE = "$(SRCROOT)/Noteboy/Entry point/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
